@@ -21,3 +21,9 @@ Route::get('/blogs', function () {
 Route::get('/courses', function () {
     return view('course.index');
 });
+Route::get('/course/create', function () {
+    return view('course.create');
+});
+Route::post('/course/store', function () {
+});
+//model ra migration
