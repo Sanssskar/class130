@@ -1,10 +1,10 @@
-<section class="bg-(--primary)/50 p-2">
+<section class="bg-(--primary)/90 py-5">
     <div class="container ">
         <nav class="flex items-center justify-between gap-2">
-            <div>
-                My Logo
+            <div class="font-bold text-white">
+              SanskarHub
             </div>
-            <div class="flex gap-5">
+            <div class="flex gap-5 text-white">
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/service">Service</a>

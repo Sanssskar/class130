@@ -14,7 +14,8 @@
             <div class="mt-10">
                 <form action="/course/store" method="post">
                     @csrf
-                    <div>
+                   <div>
+                     <div>
                         <label for="name">Course Name</label>
                         <input placeholder="enter your full name" type="text" name="full_name" id="name"
                             class="border w-full px-2 py-1">
@@ -32,6 +33,7 @@
                             class="bg-(--primary)/90 hover:bg-(--primary) px-3 py-3 rounded duration-300 text-white font-semibold "
                             type="submit">Submit Details</button>
                     </div>
+                   </div>
                 </form>
             </div>
         </div>
