@@ -16,10 +16,15 @@
         :root{
             --primary : #F85604;
         }
+        button{
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <x-navbar />
     <main>
         {{ $slot }}
