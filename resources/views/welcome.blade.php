@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="p-10">
-                        <a href="/courses">
+                        <a href="/course/index">
                             <button class="bg-(--primary)/90 hover:bg-(--primary) px-3 py-2 text-white rounded-xl">View
                                 All Courses-></button>
                         </a>

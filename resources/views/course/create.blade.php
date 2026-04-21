@@ -5,10 +5,10 @@
         <div class="container">
             <div class="flex items-center justify-between">
                 <h1 class="text-5xl font-bold">
-                    Create Data
+                    Create Course
                 </h1>
                 <a class="bg-(--primary)/90 hover:bg-(--primary) px-3 py-3 rounded-full duration-300 text-white font-semibold"
-                    href="/courses">Go back-></a>
+                    href="/course/index">Go back-></a>
             </div>
 
             <div class="mt-10">

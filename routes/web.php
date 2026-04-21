@@ -20,8 +20,9 @@ Route::get('/contact', function () {
 Route::get('/blogs', function () {
     return view('blogs');
 });
-Route::get('/courses', function () {
-    return view('course.index');
+Route::get('/course/index', function () {
+    $courses = Course::all();
+    return view('course.index',compact('courses'));
 });
 Route::get('/course/create', function () {
     return view('course.create');
@@ -32,7 +33,7 @@ Route::post('/course/store', function (Request $request) {
     $course->price = $request->price;
     $course->remarks = $request->remarks;
     $course->save();
-    toast('Course Created Succesfully','success');
+    toast('Course Created Succesfully', 'success');
     return redirect('/course/create');
 });
 //model ra migration
