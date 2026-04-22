@@ -29,11 +29,16 @@
                             <td class="border text-center py-2">{{$course->name}}</td>
                             <td class="border text-center py-2">{{$course->price}}</td>
                             <td class="border text-center py-2">{{$course->remarks}}</td>
-                            <td class="border text-center py-2">
-                                <a href=""
+                            <td class="flex justify-center border text-center py-2">
+                                <a href="/course/edit/{{$course->id}}"
                                     class="bg-green-400 px-3 py-1 rounded-full font-semibold text-white">Edit</a>
-                                <a href=""
-                                    class="bg-red-400 px-3 py-1 rounded-full font-semibold text-white">Delete</a>
+                                    <form action="/course/delete/{{$course->id}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="bg-red-400 px-3 py-1 rounded-full font-semibold text-white" type="submit">
+                                            Delete
+                                        </button>
+                                    </form>
                             </td>
                         </tr>
                     @endforeach

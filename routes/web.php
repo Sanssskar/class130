@@ -22,7 +22,7 @@ Route::get('/blogs', function () {
 });
 Route::get('/course/index', function () {
     $courses = Course::all();
-    return view('course.index',compact('courses'));
+    return view('course.index', compact('courses'));
 });
 Route::get('/course/create', function () {
     return view('course.create');
@@ -36,4 +36,25 @@ Route::post('/course/store', function (Request $request) {
     toast('Course Created Succesfully', 'success');
     return redirect('/course/create');
 });
-//model ra migration
+
+Route::delete('/course/delete/{id}', function ($id) {
+    $course = Course::find($id);
+    $course->delete();
+    toast('Course Deleted Succesfully', 'success');
+    return redirect('/course/index');
+});
+Route::get('/course/edit/{id}', function ($id) {
+    $course = Course::find($id);
+    return view('course.edit', compact('course'));
+});
+
+Route::patch('/course/update/{id}', function (Request $request, $id) {
+    $course = Course::find($id);
+    $course->name = $request->full_name;
+    $course->price = $request->price;
+    $course->remarks = $request->remarks;
+    $course->save();
+    toast('Course Updated Succesfully', 'success');
+    return redirect('/course/index');
+});
+// controller mvc architecture 
