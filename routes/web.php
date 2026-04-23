@@ -1,60 +1,24 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PageController;
 use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Pages
+Route::get('/',[PageController::class ,'index'] );
+Route::get('/about',[PageController::class,'about'] );
+Route::get('/service',[PageController::class,'service']);
+Route::get('/contact', [PageController::class,'contact']);
+Route::get('/blogs', [PageController::class,'blogs']);
 
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/service', function () {
-    return view('service');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/blogs', function () {
-    return view('blogs');
-});
-Route::get('/course/index', function () {
-    $courses = Course::all();
-    return view('course.index', compact('courses'));
-});
-Route::get('/course/create', function () {
-    return view('course.create');
-});
-Route::post('/course/store', function (Request $request) {
-    $course = new Course;
-    $course->name = $request->full_name;
-    $course->price = $request->price;
-    $course->remarks = $request->remarks;
-    $course->save();
-    toast('Course Created Succesfully', 'success');
-    return redirect('/course/create');
-});
+//Course
+Route::get('/course/index',[CourseController::class,'index']);
+Route::get('/course/create',[CourseController::class,'create']);
+Route::post('/course/store',[CourseController::class,'store']);
+Route::get('/course/edit/{id}',[CourseController::class,'edit']);
+Route::patch('/course/update/{id}',[CourseController::class,'update']);
+Route::delete('/course/delete/{id}',[CourseController::class,'delete']);
 
-Route::delete('/course/delete/{id}', function ($id) {
-    $course = Course::find($id);
-    $course->delete();
-    toast('Course Deleted Succesfully', 'success');
-    return redirect('/course/index');
-});
-Route::get('/course/edit/{id}', function ($id) {
-    $course = Course::find($id);
-    return view('course.edit', compact('course'));
-});
-
-Route::patch('/course/update/{id}', function (Request $request, $id) {
-    $course = Course::find($id);
-    $course->name = $request->full_name;
-    $course->price = $request->price;
-    $course->remarks = $request->remarks;
-    $course->save();
-    toast('Course Updated Succesfully', 'success');
-    return redirect('/course/index');
-});
-// controller mvc architecture 
+//Booking

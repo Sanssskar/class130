@@ -8,18 +8,17 @@
         </div>
     </section>
 
-    {{-- {{$courses}} --}}
 
-    <section>
-        <div class="container">
+    <section >
+        <div  class="container">
             <table class="w-full">
-                <thead>
+                <thead >
                     <tr>
-                        <th class="border py-1">S.N</th>
-                        <th class="border py-1">Course Name</th>
-                        <th class="border py-1">Price</th>
-                        <th class="border py-1">Remarks</th>
-                        <th class="border py-1">Action</th>
+                        <th   class="border py-1">S.N</th>
+                        <th   class="border py-1">Course Name</th>
+                        <th   class="border py-1">Price</th>
+                        <th   class="border py-1">Remarks</th>
+                        <th   class="border py-1">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,3 +46,11 @@
         </div>
     </section>
 </x-layout>
+
+
+
+
+Booking <-CRUD
+model php artisan make:model Bookings -m
+databse columns -> 3 minimum
+COntroller add booking contoller <-
