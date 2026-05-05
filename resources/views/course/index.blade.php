@@ -50,7 +50,7 @@
 
 
 
-Booking <-CRUD
+{{-- Booking <-CRUD
 model php artisan make:model Bookings -m
 databse columns -> 3 minimum
-COntroller add booking contoller <-
+COntroller add booking contoller <- --}}
