@@ -20,8 +20,14 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $course = new Course();
-        $course->name = $request->full_name;
         $course->price = $request->price;
+        $course->name = $request->full_name;
+        $file = $request->image;
+        if ($file) {
+            $file_name = time() . "." . $file->getClientOriginalExtension(); //kukur.jpg
+            $file->move('images/', $file_name);
+            $course->image = "images/$file_name";
+        }
         $course->remarks = $request->remarks;
         $course->save();
         toast('Course Created Succesfully', 'success');
@@ -37,6 +43,12 @@ class CourseController extends Controller
         $course = Course::find($id);
         $course->name = $request->full_name;
         $course->price = $request->price;
+        $file = $request->image;
+        if ($file) {
+            $file_name = time() . "." . $file->getClientOriginalExtension(); //kukur.jpg
+            $file->move('images/', $file_name);
+            $course->image = "images/$file_name";
+        }
         $course->remarks = $request->remarks;
         $course->save();
         toast('Course Updated Succesfully', 'success');

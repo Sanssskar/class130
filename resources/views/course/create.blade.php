@@ -12,28 +12,32 @@
             </div>
 
             <div class="mt-10">
-                <form action="/course/store" method="post">
+                <form action="/course/store" method="post" enctype="multipart/form-data">
                     @csrf
-                   <div>
-                     <div>
-                        <label for="name">Course Name</label>
-                        <input placeholder="enter your full name" type="text" name="full_name" id="name"
-                            class="border w-full px-2 py-1">
-                    </div>
                     <div>
-                        <label for="price">Price</label>
-                        <input type="number" name="price" id="price" class="border w-full px-2 py-1">
+                        <div>
+                            <label for="name">Course Name</label>
+                            <input placeholder="enter your full name" type="text" name="full_name" id="name"
+                                class="border w-full px-2 py-1">
+                        </div>
+                        <div>
+                            <label for="price">Price</label>
+                            <input type="number" name="price" id="price" class="border w-full px-2 py-1">
+                        </div>
+                        <div>
+                            <label for="image">Course Image</label>
+                            <input type="file" name="image" id="image" class="border w-full px-2 py-1">
+                        </div>
+                        <div>
+                            <label for="remarks">Remarks</label>
+                            <input type="text" name="remarks" id="remarks" class="border w-full px-2 py-1">
+                        </div>
+                        <div class="mt-2">
+                            <button
+                                class="bg-(--primary)/90 hover:bg-(--primary) px-3 py-3 rounded duration-300 text-white font-semibold "
+                                type="submit">Submit Details</button>
+                        </div>
                     </div>
-                    <div>
-                        <label for="remarks">Remarks</label>
-                        <input type="text" name="remarks" id="remarks" class="border w-full px-2 py-1">
-                    </div>
-                    <div class="mt-2">
-                        <button
-                            class="bg-(--primary)/90 hover:bg-(--primary) px-3 py-3 rounded duration-300 text-white font-semibold "
-                            type="submit">Submit Details</button>
-                    </div>
-                   </div>
                 </form>
             </div>
         </div>

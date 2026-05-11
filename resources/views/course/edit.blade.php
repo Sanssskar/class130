@@ -12,7 +12,7 @@
             </div>
 
             <div class="mt-10">
-                <form action="/course/update/{{$course->id}}" method="post">
+                <form action="/course/update/{{$course->id}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                    <div>
@@ -25,6 +25,12 @@
                         <label for="price">Price</label>
                         <input type="number" name="price" id="price" class="border w-full px-2 py-1" value="{{$course->price}}">
                     </div>
+                      <div>
+                            <label for="image">Course Image</label>
+                            <input type="file" name="image" id="image" class="border w-full px-2 py-1">
+                            <img src="{{ asset($course->image) }}" width="50"
+                                    alt="{{$course->name}}">
+                        </div>
                     <div>
                         <label for="remarks">Remarks</label>
                         <input type="text" name="remarks" id="remarks" class="border w-full px-2 py-1" value="{{$course->remarks}}">
