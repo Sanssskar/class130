@@ -10,6 +10,7 @@
                 <a href="/service">Service</a>
                 <a href="/contact">Contact</a>
                 <a href="/blogs">Blogs</a>
+                <a href="{{route('booking.index')}}">Enrolment</a>
             </div>
         </nav>
     </div>
